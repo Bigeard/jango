@@ -6,6 +6,9 @@ DATABASES['default'] = dj_database_url.config()
 DEBUG = False
 TEMPLATES_DEBUG = False
 
-ALLOWED_HOSTS = ['app-jango.herokuapp.com']
-
 SECRET_KEY = get_env_variable('SECRET_KEY', '')
+
+MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+ALLOWED_HOSTS = ['app-jango.herokuapp.com']
