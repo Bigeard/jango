@@ -6,5 +6,6 @@ router = routers.DefaultRouter()
 router.register('orders', views.OrderView)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', views.index, name='index'),
+    path('api/', include(router.urls)),
 ]

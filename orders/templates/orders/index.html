@@ -1,1 +1,23 @@
-<h1>TEST TEST TEST</h1>
+{% extends 'orders/layout.html' %}
+
+{% block content %}
+<h2>XML URL <a href="{{url}}">{{url}}</a></h2>
+
+{% for order in orders %}
+<p>{{order.marketplace}} | {{order.lastname}} | {{order.city}}</p>
+<table border="1">
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    {% for product in order.products %}
+    <tr>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endfor %}
+
+<a href="/save">Save in database</a>
+{% endblock %}
