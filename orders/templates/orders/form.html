@@ -1,0 +1,47 @@
+{% extends 'orders/layout.html' %}
+
+{% block content %}
+
+<div class="top">
+    <h1>Form</h1>
+    {% if type == "order" %}
+        <a href="/orders/">⬅️ Return all orders</a>
+    {% else %}
+        <a href="/">⬅️ Return XML url</a>    
+    {% endif  %}
+</div>
+
+<form action="{% url 'form' %}" method="POST">{% csrf_token %}
+    
+    <input type="hidden" name="type" value="{{type}}">
+    <input type="hidden" name="action" value="{{action}}">
+
+    <input type="hidden" name="idOrder" value="{{idOrder}}">
+
+    <label for="marketplace">Marketplace</label>
+    <input id="marketplace" type="text" value="{{marketplace}}" name="marketplace" required>
+
+    <label for="lastname">Lastname</label>
+    <input id="lastname" type="text" value="{{lastname}}" name="lastname" required>
+
+    <label for="city">City</label>
+    <input id="city" type="text" value="{{city}}" name="city" required>
+
+    <hr>
+
+    <input type="hidden" name="idProduct" value="{{idProduct}}">
+
+    <label for="title">Product Title</label>
+    <input id="title" type="text" value="{{title}}" name="title" required>
+
+    <label for="price">Price</label>
+    <div class="input-number">
+        <input id="price" type="number" step="0.01" value="{{price}}" name="price" required>
+        <span class="span-euro">€</span>
+    </div>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
