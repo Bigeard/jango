@@ -1,23 +1,50 @@
 {% extends 'orders/layout.html' %}
 
 {% block content %}
-<h2>XML URL <a href="{{url}}">{{url}}</a></h2>
+
+<div class="status {{status}}">
+    {% if status == 'error' %}
+        <p>Error: the order was not added</p>
+    {% endif %}
+    {% if status == 'success' %}
+        <p>Success: the order has been added</p>
+    {% endif %}
+</div>
+
+<div class="top">
+    <h1>XML URL :</h1>
+    <input id="inputSearch" type="text" value="{{url}}">
+    <div class="tool-url">
+        <a href="{{url}}" class="open-link" target="_blank">🔗 Open link</a>
+        <button onclick="searchXML()" class="search">🔎 Search</button>
+    </div>
+
+    <a href="/form/?type=order&action=add&action=add" class="create-order">+ Create order</a>
+</div>
 
 {% for order in orders %}
-<p>{{order.marketplace}} | {{order.lastname}} | {{order.city}}</p>
-<table border="1">
+<div class="order">
+    <p>{{order.idOrder}} | {{order.marketplace}} | {{order.lastname}} | {{order.city}}</p>
+    <a href="/form/?type=xml&action=add&idOrder={{order.idOrder}}" class="add">+Add</a>
+</div>
+<table>
     <tr>
-        <th>Product</th>
-        <th>Price</th>
+        <th class="index">id</th>
+        <th>product</th>
+        <th>price</th>
     </tr>
     {% for product in order.products %}
     <tr>
+        <td>{{forloop.counter}}</td>
         <td>{{product.title}}</td>
-        <td>{{product.price}}</td>
+        <td class="price">{{product.price}}€
+            <a href="/form/?type=xml&action=add&idOrder={{order.idOrder}}&idProduct={{forloop.counter}}" class="product">+Add</a>
+        </td>
     </tr>
     {% endfor %}
 </table>
+{% empty %}
+    <h2>No result, sorry... 😭</h2>
 {% endfor %}
 
-<a href="/save">Save in database</a>
 {% endblock %}

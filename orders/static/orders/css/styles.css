@@ -1,0 +1,405 @@
+html,
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#9093db), to(#4cc9e4));
+  background: linear-gradient(to right, #9093db, #4cc9e4);
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+html .logo,
+body .logo {
+  font-weight: bold;
+  font-size: 25px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+}
+
+html header,
+body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff4d;
+  border-top: 5px solid #fff;
+  padding: 0 30px;
+  margin: 0;
+  -webkit-box-shadow: 0 0 20px #80808066;
+          box-shadow: 0 0 20px #80808066;
+}
+
+html header .menu,
+body header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+html header .menu .menu-item,
+body header .menu .menu-item {
+  border-radius: 0;
+  line-height: 50px;
+  color: #444444;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 0 20px;
+  text-decoration: none;
+}
+
+html header .menu .active,
+body header .menu .active {
+  background: #fff;
+}
+
+html header .menu .menu-item:hover,
+body header .menu .menu-item:hover {
+  background: #9093db46;
+}
+
+html .content,
+body .content {
+  display: block;
+  margin: 0 auto 100px auto;
+  max-width: 1000px;
+  padding: 0 20px 20px 20px;
+}
+
+html .content .status,
+body .content .status {
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 0 0 10px 10px;
+}
+
+html .content .status p,
+body .content .status p {
+  margin: 0;
+  font-size: 14px;
+}
+
+html .content .status.success,
+body .content .status.success {
+  background: #00c66b99;
+}
+
+html .content .status.error,
+body .content .status.error {
+  background: #ff000080;
+}
+
+html .content .top,
+body .content .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 50px 0 50px 0;
+}
+
+html .content .top h1,
+body .content .top h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+html .content .top .tool-url,
+body .content .top .tool-url {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html .content .top #inputSearch,
+body .content .top #inputSearch {
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: 0 0 20px #80808080;
+          box-shadow: 0 0 20px #80808080;
+}
+
+html .content .top .create-order,
+body .content .top .create-order {
+  border-radius: 0 0 10px 10px;
+}
+
+html .content .top .open-link,
+body .content .top .open-link {
+  cursor: alias;
+  border-radius: 0 0 0 10px;
+}
+
+html .content .top .search,
+body .content .top .search {
+  border-radius: 0 0 10px 0;
+}
+
+html .content a,
+body .content a {
+  font-size: 14px;
+  color: #535353;
+  background: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+html .content a:hover,
+body .content a:hover {
+  background: #24265a62;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+html .content a.disabled,
+body .content a.disabled {
+  cursor: not-allowed !important;
+  color: #ccc;
+  background: #fff;
+}
+
+html .content button,
+body .content button {
+  cursor: pointer;
+  font-size: 14px;
+  color: #8d8d8d;
+  background: #fff;
+  padding: 5px 10px;
+  /* margin: 0 0 0 20px; */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+}
+
+html .content button:hover,
+body .content button:hover {
+  background: #24265a62;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+html .content input,
+body .content input {
+  width: 100%;
+  margin: 10px 0 30px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+html .content table,
+body .content table {
+  border-top: solid 2px #fff;
+  table-layout: fixed;
+  border-spacing: 0px;
+  text-align: left;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+html .content table th,
+html .content table td,
+body .content table th,
+body .content table td {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid #ffffff4d;
+}
+
+html .content table th,
+body .content table th {
+  padding: 10px 10px;
+  text-transform: uppercase;
+  background: #ffffff4d;
+}
+
+html .content table tr:nth-child(odd),
+body .content table tr:nth-child(odd) {
+  background: #ffffff15;
+}
+
+html .content table .index,
+body .content table .index {
+  width: 22px;
+}
+
+html .content table .price,
+body .content table .price {
+  padding: 5px 5px 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html .content table .price div,
+body .content table .price div {
+  margin: 4px;
+}
+
+html .content table .price .product,
+body .content table .price .product {
+  color: #fff;
+  background: transparent;
+}
+
+html .content table .price .product:hover,
+body .content table .price .product:hover {
+  background: #24265a62;
+}
+
+html .content table .price .delete,
+body .content table .price .delete {
+  color: #fff;
+  background: transparent;
+}
+
+html .content table .price .delete:hover,
+body .content table .price .delete:hover {
+  background: #ff000070;
+}
+
+html .content .order,
+body .content .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+}
+
+html .content .order p,
+body .content .order p {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 16px;
+}
+
+html .content .order .add,
+body .content .order .add {
+  border-radius: 10px 10px 0 0;
+}
+
+html .content .order .add-edit,
+body .content .order .add-edit {
+  margin: 0 0 5px 0;
+}
+
+html .content .order .add-edit .add,
+body .content .order .add-edit .add {
+  border-radius: 10px 0 0 0;
+}
+
+html .content .order .add-edit .edit,
+body .content .order .add-edit .edit {
+  border-radius: 0 0 0 0;
+}
+
+html .content .order .add-edit .delete,
+body .content .order .add-edit .delete {
+  border-radius: 0 10px 0 0;
+}
+
+html .content .order .add-edit .delete:hover,
+body .content .order .add-edit .delete:hover {
+  background: #ff000070;
+}
+
+html .content form,
+body .content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html .content form input[type="submit"],
+body .content form input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  color: #8d8d8d;
+  background: #fff;
+  font-weight: bold;
+}
+
+html .content form input[type="submit"]:hover,
+body .content form input[type="submit"]:hover {
+  background: #24265a62;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+html .content form input[type="number"],
+body .content form input[type="number"] {
+  margin: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+html .content form .input-number,
+body .content form .input-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 10px 0 30px 0;
+  font-size: 16px;
+  color: #8d8d8d;
+  background: #fff;
+  border-radius: 10px;
+}
+
+html .content form .span-euro,
+body .content form .span-euro {
+  width: 30px;
+}
+
+html .content form hr,
+body .content form hr {
+  width: 50%;
+  border: solid 2px #fff;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=styles.css.map */

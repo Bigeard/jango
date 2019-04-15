@@ -1,0 +1,60 @@
+{% extends 'orders/layout.html' %}
+
+{% block content %}
+
+<div class="status {{status}}">
+    {% if status == 'error' %}
+    <p>Error: the order was not added or edited</p>
+    {% endif %}
+    {% if status == 'success' %}
+    <p>Success: the order has been added or edited</p>
+    {% endif %}
+</div>
+
+<div class="top">
+    <h1>All orders</h1>
+    <input id="inputSearch" type="text" value="{{search}}" placeholder="Do you want find something ?">
+    <div class="tool-url">
+        <a href="#" class="open-link disabled">🔗 Open link</a>
+        <button onclick="searchOrder()" class="search">🔎 Search</button>
+    </div>
+    <a href="/form/?type=order&action=add" class="create-order">+ Create order</a>
+</div>
+
+{% for order in orders reversed %}
+<div class="order">
+    <p>{{order.id}} | {{order.marketplace}} | {{order.lastname}} | {{order.city}}</p>
+    <div class="add-edit">
+        <a href="/form/?type=order&action=add&idOrder={{order.id}}" class="add">+Add</a><a href="#"
+            class="edit disabled">~Edit</a><a href="/orders/?type=order&action=delete&idOrder={{order.id}}"
+            class="delete">Delete</a>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <th class="index">id</th>
+        <th>product</th>
+        <th>price</th>
+    </tr>
+
+    {% for product in order.products.all %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{product.title}}</td>
+        <td class="price">{{product.price}}€
+            <div>
+                <a href="/form/?type=order&action=edit&idOrder={{order.id}}&idProduct={{product.id}}"
+                    class="product">~Edit</a>
+                <a href="/orders/?type=order&action=delete&idOrder={{order.id}}&idProduct={{product.id}}"
+                    class="delete">Delete</a>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% empty %}
+<h2>No result, sorry... 😭</h2>
+{% endfor %}
+
+{% endblock %}

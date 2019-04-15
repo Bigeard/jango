@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jango</title>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'orders/favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'orders/css/styles.css' %}">
 </head>
 
 <body>
     <header>
-        <h1>Jango</h1>
-        <a href="/api/">Go to API</a>
-        <a href="/admin/">Admin Login</a>
+        <a href="{% url 'index' %}" class="logo">Jango</a>
+        <div class="menu">
+            <a {% if type == 'xml' %} class="menu-item active" {% endif %} class="menu-item" href="{% url 'index' %}">XML url</a>
+            <a {% if type == 'order' %} class="menu-item active" {% endif %} class="menu-item" href="{% url 'orders' %}">All orders</a>
+            <a class="menu-item" href="/api/">API Jango</a>
+            <a class="menu-item" href="/admin/">Admin Login</a>
+        </div>
     </header>
 
     <div class="content">
@@ -19,5 +26,6 @@
         {% endblock %}
     </div>
 </body>
+<script type="text/javascript" src="{% static 'orders/js/scripts.js' %}"></script>  
 
 </html>

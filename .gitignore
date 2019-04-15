@@ -60,4 +60,3 @@ target/
 .vscode
 staticfiles
 venv
-README.md
